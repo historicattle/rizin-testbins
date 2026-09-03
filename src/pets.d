@@ -1,4 +1,5 @@
 // dmd -O -g -of=elf/dlang_pet src/pets.d
+// dmd -O  -g -m64 dlang_pet_.exe src\pets.d
 
 interface Speaker {
     size_t speak();
@@ -64,7 +65,7 @@ class Petoverr : BasePet, Speaker {
     }
 }
 
-size_t dispatch(Speaker speaker, Runner runner, Pet pet, BasePet base) {
+export extern(D) size_t dispatch(Speaker speaker, Runner runner, Pet pet, BasePet base) {
     size_t result = speaker.speak();
     result += runner.runSpeed();
     result += pet.petValue();

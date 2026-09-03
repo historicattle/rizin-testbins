@@ -64,7 +64,7 @@ class Petoverr : BasePet, Speaker {
     }
 }
 
-size_t dispatch(Speaker speaker, Runner runner, Pet pet, BasePet base) {
+export extern(D) size_t dispatch(Speaker speaker, Runner runner, Pet pet, BasePet base) {
     size_t result = speaker.speak();
     result += runner.runSpeed();
     result += pet.petValue();
